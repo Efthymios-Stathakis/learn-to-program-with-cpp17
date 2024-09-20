@@ -5,13 +5,18 @@ using std::vector;
 using std::string;
 using std::to_string;
 
-Account::Account(): balance(0)
+Account::Account(): balance(0), limit(0)
 {    
 }
 
-Account::Account(int money): balance(0), log({})
+Account::Account(int deposit): balance(deposit), limit(0)
 {    
-    Deposit(money);
+}
+
+
+Account::Account(int deposit, int limit): balance(deposit), limit(limit)
+{    
+    Deposit(deposit);
 }
 
 vector<string> Account::Report()
@@ -45,7 +50,7 @@ bool Account::Withdraw(int amount)
         cout << "Withdrawing " << to_string(amount) << " failed.";
         return false;
     }
-    if (balance > amount)
+    if (balance + limit > amount)
     {
         balance -= amount;
         log.push_back(Transaction(amount, "Withdraw"));

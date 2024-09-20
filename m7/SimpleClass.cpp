@@ -33,8 +33,22 @@ int main()
     a2.Withdraw(200);
     cout << "After withdrawint $200, balance is  " << a2.GetBalance() << '\n';
     a2.Withdraw(30);
-    cout << "After withdrawint $200, balance is  " << a2.GetBalance() << '\n';
+    cout << "After withdrawint $30, balance is  " << a2.GetBalance() << '\n';
     for (auto report: a2.Report())
+    {
+        cout << report << '\n';
+    }
+
+    Account a3(100, 150);
+    a3.Report();
+    cout << "After depositing $100, balance is  " << a3.GetBalance() << '\n';
+    a3.Deposit(10);
+    cout << "After depositing $10, balance is  " << a3.GetBalance() << '\n';
+    a3.Withdraw(200);
+    cout << "After withdrawint $200, balance is  " << a3.GetBalance() << '\n';
+    a3.Withdraw(30);
+    cout << "After withdrawint $30, balance is  " << a3.GetBalance() << '\n';
+    for (auto report: a3.Report())
     {
         cout << report << '\n';
     }

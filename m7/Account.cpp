@@ -19,7 +19,7 @@ Account::Account(int deposit, int limit): balance(deposit), limit(limit)
     Deposit(deposit);
 }
 
-vector<string> Account::Report()
+vector<string> Account::Report() const
 {
     vector<string> report;
     report.push_back("Balance is " + to_string(balance));

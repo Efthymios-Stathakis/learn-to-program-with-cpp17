@@ -9,15 +9,15 @@ class Account
 {
 private:    
     int balance;
-    int limit;
+    int const limit;
     vector<Transaction> log;
 
 public:
     Account();
     Account(int deposit);
     Account(int deposit, int limit);
-    vector<string> Report();
+    vector<string> Report() const;
     bool Deposit(int amount);
     bool Withdraw(int amount);
-    int GetBalance() { return balance; }
+    int GetBalance() const { return balance; }
 };

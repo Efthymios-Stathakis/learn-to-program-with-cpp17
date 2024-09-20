@@ -346,7 +346,14 @@ GitHub.sublime-settings
 tmtags
 
 ##### VisualStudioCode
-.vscode/*
+.*
+*
+!/**/
+!*.*
+!/.gitignore
+.DS_Store
+.vscode/
+*/.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
